@@ -3,9 +3,19 @@
 ## Live preview : https://mini-blog-project.netlify.app/
 
 ## Description :
-The Mini-Blog-Project is a web application that allows users to explore and engage with a collection of posts.
+  The Mini-Blog-Project is a web application that allows users to explore and engage with a collection of posts.
 Users can read the posts, interact with the content. Additionally, users have the ability to edit or delete existing post or create new posts.
 The application also provides a feature to access author profiles and view their posts.
+ ### This Project :
+###### Relies on RTK Query hooks with identifiable cache keys.
+###### Use multiple queries, loading states, etc. inside of one component.
+###### Use of selectFromResult in useQuery hooks with accompanying loading, success, and error states
+
+## Tech Stack
+
+**Client:** React, Redux
+
+**Server:** JSON Server
 
 ## Concepts are used :
   * React
@@ -13,15 +23,14 @@ The application also provides a feature to access author profiles and view their
   * React advanced hooks
   * React Router 6
   * Axios 
+  * JSON Server
   * Date-fns
+  * RTK Query : createApi - createEntityAdapter - selectFromResult ...
+  
+![Capture d’écran 2023-05-13 012701](https://github.com/SRayen/Mini-Blog-Project-V-2.0/assets/13922445/d0ddd936-7102-46a1-87a8-0043728dd9d1)
 
-![Capture d’écran 2023-05-11 010619](https://github.com/SRayen/Mini-Blog-Project/assets/13922445/e9e295db-b219-4580-816f-785710be9524)
 
-![Capture d’écran 2023-05-11 010713](https://github.com/SRayen/Mini-Blog-Project/assets/13922445/b7c12a51-6573-4ffc-99fd-51c6d43725bf)
-
-![Capture d’écran 2023-05-11 010805](https://github.com/SRayen/Mini-Blog-Project/assets/13922445/c4f0c384-2a1f-4afa-9f11-77e88d145a8a)
-
-![Capture d’écran 2023-05-11 011032](https://github.com/SRayen/Mini-Blog-Project/assets/13922445/ca0d0144-6372-4fb5-b3a7-bf52bfdd5a9c)
+![Capture d’écran 2023-05-13 020438](https://github.com/SRayen/Mini-Blog-Project-V-2.0/assets/13922445/aed758b0-efc4-48c4-bf53-0e95f56b7fb8)
 
 ## Installation :
 ### To run the Mini-Blog-Project locally, follow these steps:
@@ -29,7 +38,7 @@ The application also provides a feature to access author profiles and view their
   #### 1.Clone the repository:
 
 ```
-git clone https://github.com/your-username/Mini-Blog-Project.git
+git clone https://github.com/SRayen/Mini-Blog-Project-V-2.0-RTK-Query.git
 ```
   #### 2.Navigate to the project directory::
 ```
@@ -40,7 +49,13 @@ cd Mini-Blog-Project
 ```
 npm install
 ```
-  #### 4.Start the development server:
+  #### 4.Start the JSON server:
+
+```
+json-server --watch data/db.json --port 3001
+```
+
+#### 5.Start the react app:
 
 ```
 npm start
