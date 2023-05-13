@@ -6,6 +6,7 @@ import {
   useUpdatePostMutation,
 } from "./postsSlice";
 import { useGetUsersQuery } from "../users/usersSlice";
+import { MoonLoader } from "react-spinners";
 
 const EditPost = () => {
   const { postId } = useParams();
@@ -36,7 +37,7 @@ const EditPost = () => {
     }
 }, [isSuccess, post?.title, post?.body, post?.userId])
 
-if (isLoadingPosts) return <p>Loading...</p>
+if (isLoadingPosts) return  <MoonLoader color="#d81cb9" size={250}/>
 
   if (!post) {
     return (

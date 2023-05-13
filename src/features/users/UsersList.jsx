@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useGetUsersQuery } from "./usersSlice";
+import { MoonLoader } from "react-spinners";
 
 const UsersList = () => {
   const {
@@ -13,7 +14,7 @@ const UsersList = () => {
 
   let content;
   if (isLoading) {
-    content = <p>Loading...</p>;
+    content = <MoonLoader color="#d81cb9" size={250} />;
   } else if (isSuccess) {
     const renderedUsers = users.ids.map((userId) => (
       <li key={userId}>

@@ -14,7 +14,6 @@ const PostsList = () => {
 
   let content;
   if (isLoading) {
-    // content = <p>"Loading..."</p>;
     content =  
     <MoonLoader color="#d81cb9" size={250}/>
 
