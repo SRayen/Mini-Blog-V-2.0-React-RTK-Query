@@ -54,10 +54,9 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
         });
         return postsAdapter.setAll(initialState, loadedPosts);
       },
-      providesTags: (result, error, arg) => {
-        console.log(result);
-        return [...result.ids.map((id) => ({ type: "Post", id }))];
-      },
+     
+
+      providesTags: [{ type: "Post", id: "LIST" }],
     }),
 
     addNewPost: builder.mutation({
@@ -96,7 +95,6 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           id: arg.id,
         },
       ],
-     
     }),
 
     deletePost: builder.mutation({
@@ -117,6 +115,8 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
     addReaction: builder.mutation({
       query: ({ postId, reactions }) => ({
         url: `posts/${postId}`,
+        //We use PUT (in case where we will replace the full record)
+        //We use PATCH (in case where we will update a part of the record)
         method: "PATCH",
         // In a real app, we'd probably need to base this on user ID somehow
         // so that a user can't do the same reaction more than once
