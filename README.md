@@ -1,6 +1,6 @@
 # Mini-Blog-Project
 
-## Live preview : https://mini-blog-project.netlify.app/
+## Live preview : https://mini-blog-v2-react.netlify.app/
 
 ## Description :
   The Mini-Blog-Project is a web application that allows users to explore and engage with a collection of posts.
@@ -50,13 +50,8 @@ cd Mini-Blog-Project
 ```
 npm install
 ```
-  #### 4.Start the JSON server:
 
-```
-json-server --watch data/db.json --port 3001
-```
-
-#### 5.Start the react app:
+#### 4.Run the App:
 
 ```
 npm start
