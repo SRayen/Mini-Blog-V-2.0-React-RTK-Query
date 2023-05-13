@@ -320,7 +320,14 @@
       "userId": 2,
       "id": 12,
       "title": "in quibusdam tempore odit est dolorem",
-      "body": "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio"
+      "body": "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio",
+      "reactions": {
+        "thumbsUp": 3,
+        "wow": 1,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 0
+      }
     },
     {
       "userId": 2,
@@ -332,7 +339,14 @@
       "userId": 2,
       "id": 14,
       "title": "voluptatem eligendi optio",
-      "body": "fuga et accusamus dolorum perferendis illo voluptas\nnon doloremque neque facere\nad qui dolorum molestiae beatae\nsed aut voluptas totam sit illum"
+      "body": "fuga et accusamus dolorum perferendis illo voluptas\nnon doloremque neque facere\nad qui dolorum molestiae beatae\nsed aut voluptas totam sit illum",
+      "reactions": {
+        "thumbsUp": 2,
+        "wow": 1,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 0
+      }
     },
     {
       "userId": 2,
@@ -976,6 +990,20 @@
         "coffee": 3
       },
       "id": 109
+    },
+    {
+      "title": "post 5",
+      "body": "test ",
+      "userId": 3,
+      "date": "2023-05-13T01:31:27.286Z",
+      "reactions": {
+        "thumbsUp": 3,
+        "wow": 0,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 0
+      },
+      "id": 110
     }
   ]
 }
