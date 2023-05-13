@@ -3,9 +3,19 @@
 ## Live preview : https://mini-blog-project.netlify.app/
 
 ## Description :
-The Mini-Blog-Project is a web application that allows users to explore and engage with a collection of posts.
+  The Mini-Blog-Project is a web application that allows users to explore and engage with a collection of posts.
 Users can read the posts, interact with the content. Additionally, users have the ability to edit or delete existing post or create new posts.
 The application also provides a feature to access author profiles and view their posts.
+ ### This Project :
+###### Relies on RTK Query hooks with identifiable cache keys.
+###### Use multiple queries, loading states, etc. inside of one component.
+###### Use of selectFromResult in useQuery hooks with accompanying loading, success, and error states
+
+## Tech Stack
+
+**Client:** React, Redux
+
+**Server:** JSON Server
 
 ## Concepts are used :
   * React
@@ -13,7 +23,9 @@ The application also provides a feature to access author profiles and view their
   * React advanced hooks
   * React Router 6
   * Axios 
+  * JSON Server
   * Date-fns
+  * RTK Query : createApi - createEntityAdapter - selectFromResult ...
 
 ![Capture d’écran 2023-05-11 010619](https://github.com/SRayen/Mini-Blog-Project/assets/13922445/e9e295db-b219-4580-816f-785710be9524)
 
