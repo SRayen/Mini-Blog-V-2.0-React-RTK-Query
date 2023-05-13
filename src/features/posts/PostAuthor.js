@@ -1,5 +1,4 @@
-import { useSelector } from "react-redux";
-import { selectAllUsers, useGetUsersQuery } from "../users/usersSlice";
+import {  useGetUsersQuery } from "../users/usersSlice";
 import { Link } from "react-router-dom";
 
 const PostAuthor = ({ userId }) => {

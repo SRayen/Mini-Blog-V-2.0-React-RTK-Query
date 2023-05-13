@@ -1,6 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectPostById, useGetPostsQuery } from "./postsSlice";
+import {  useGetPostsQuery } from "./postsSlice";
 import PostAuthor from "./PostAuthor";
 import TimeAgo from "./TimeAgo";
 import ReactionButtons from "./ReactionButtons";

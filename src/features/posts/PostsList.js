@@ -1,5 +1,4 @@
-import { useSelector } from "react-redux";
-import { selectPostIds, useGetPostsQuery } from "./postsSlice";
+import {  useGetPostsQuery } from "./postsSlice";
 
 import PostsExcerpt from "./PostsExcerpt";
 

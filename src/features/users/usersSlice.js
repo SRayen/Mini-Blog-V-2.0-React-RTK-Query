@@ -1,5 +1,4 @@
 import { createEntityAdapter } from "@reduxjs/toolkit";
-import axios from "axios";
 import { apiSlice } from "../api/apiSlice";
 
 const usersAdapter = createEntityAdapter({});

@@ -1,10 +1,6 @@
 import React, { useState,useEffect } from "react";
-import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import {
-  deletePost,
-  selectPostById,
-  updatePost,
   useDeletePostMutation,
   useGetPostsQuery,
   useUpdatePostMutation,

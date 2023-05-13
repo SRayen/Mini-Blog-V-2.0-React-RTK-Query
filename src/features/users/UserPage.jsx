@@ -1,9 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { selectUserById, useGetUsersQuery } from "./usersSlice";
+import { useGetUsersQuery } from "./usersSlice";
 import {
-  selectPostsByUser,
   useGetPostsByUserIdQuery,
 } from "../posts/postsSlice";
 import { Link } from "react-router-dom";
