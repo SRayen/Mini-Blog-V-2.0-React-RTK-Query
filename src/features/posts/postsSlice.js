@@ -96,6 +96,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
           id: arg.id,
         },
       ],
+     
     }),
 
     deletePost: builder.mutation({
@@ -129,11 +130,13 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
         // so it knows which piece of cache state to update
         const patchResult = dispatch(
           //updateQueryData: updates the cache state to reflect the reaction being added
+          // updateQueryData takes three arguments: the name of the endpoint to update, the same cache key value used to identify
+          //the specific cached data, and a callback that updates the cached data.
+
           extendedApiSlice.util.updateQueryData(
             //endpoint name ("getPosts")
             "getPosts",
-            // cache key (undefined in this case)
-            undefined,
+            "getPosts",
             //draft : represents the cache state
             (draft) => {
               // The `draft` is Immer-wrapped and can be "mutated" like in createSlice

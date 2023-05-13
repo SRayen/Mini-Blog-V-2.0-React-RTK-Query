@@ -1,12 +1,10 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-
-import usersReducer from "../features/users/usersSlice";
 import { apiSlice } from "../features/api/apiSlice";
 
 export const store = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
-    users: usersReducer,
+
   },
 
   //the use of RTK Query with the store require a middleware:

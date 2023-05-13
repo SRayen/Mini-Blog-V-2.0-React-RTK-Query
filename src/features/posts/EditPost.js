@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import {
@@ -6,9 +6,10 @@ import {
   selectPostById,
   updatePost,
   useDeletePostMutation,
+  useGetPostsQuery,
   useUpdatePostMutation,
 } from "./postsSlice";
-import { selectAllUsers } from "../users/usersSlice";
+import { useGetUsersQuery } from "../users/usersSlice";
 
 const EditPost = () => {
   const { postId } = useParams();
@@ -17,12 +18,29 @@ const EditPost = () => {
   const [updatePost, { isLoading }] = useUpdatePostMutation();
   const [deletePost] = useDeletePostMutation();
 
-  const post = useSelector((state) => selectPostById(state, Number(postId)));
-  const users = useSelector(selectAllUsers);
+  const { post, isLoading: isLoadingPosts, isSuccess } = useGetPostsQuery('getPosts', {
+    selectFromResult: ({ data, isLoading, isSuccess }) => ({
+        post: data?.entities[postId],
+        isLoading,
+        isSuccess
+    }),
+})
+  const { data: users, isSuccess: isSuccessUsers } =
+    useGetUsersQuery("getUsers");
 
-  const [title, setTitle] = useState(post?.title);
-  const [content, setContent] = useState(post?.body);
-  const [userId, setUserId] = useState(post?.userId);
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [userId, setUserId] = useState('');
+
+  useEffect(() => {
+    if (isSuccess) {
+        setTitle(post.title)
+        setContent(post.body)
+        setUserId(post.userId)
+    }
+}, [isSuccess, post?.title, post?.body, post?.userId])
+
+if (isLoadingPosts) return <p>Loading...</p>
 
   if (!post) {
     return (
@@ -43,7 +61,7 @@ const EditPost = () => {
       try {
         // unwrap() is used to handle the asynchronous result of that promise. If the promise is fulfilled,
         // unwrap() will return the result of the promise, otherwise it will throw an error.
-        updatePost({ id: post.id, title, body: content, userId }).unwrap();
+        updatePost({ id: post?.id, title, body: content, userId }).unwrap();
         setTitle("");
         setContent("");
         setUserId("");
@@ -55,11 +73,14 @@ const EditPost = () => {
     }
   };
 
-  const usersOptions = users.map((user) => (
-    <option key={user.id} value={Number(user.id)}>
-      {user.name}
-    </option>
-  ));
+  let usersOptions;
+  if (isSuccessUsers ) {
+    usersOptions = users.ids.map((id) => (
+      <option key={id} value={id}>
+        {users.entities[id].name}
+      </option>
+    ));
+  }
 
   const onDeletePostClicked = async () => {
     try {
@@ -88,7 +109,7 @@ const EditPost = () => {
         <label htmlFor="postAuthor">Author:</label>
         <select
           id="postAuthor"
-          defaultValue={userId}
+          value={userId}
           onChange={onAuthorChanged}
         >
           <option value=""></option>

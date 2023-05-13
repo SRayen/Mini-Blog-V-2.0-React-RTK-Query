@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { selectUserById } from "./usersSlice";
+import { selectUserById, useGetUsersQuery } from "./usersSlice";
 import {
   selectPostsByUser,
   useGetPostsByUserIdQuery,
@@ -10,7 +10,22 @@ import { Link } from "react-router-dom";
 
 const UserPage = () => {
   const { userId } = useParams();
-  const user = useSelector((state) => selectUserById(state, Number(userId)));
+
+  const {
+    user,
+    isLoading: isLoadingUser,
+    isSuccess: isSuccessUser,
+    isError: isErrorUser,
+    error: errorUser,
+  } = useGetUsersQuery("getUsers", {
+    selectFromResult: ({ data, isLoading, isSuccess, isError, error }) => ({
+      user: data?.entities[userId],
+      isLoading,
+      isSuccess,
+      isError,
+      error,
+    }),
+  });
 
   const {
     data: postsForUser,
