@@ -1,13 +1,8 @@
 import { useGetPostsQuery } from "./postsSlice";
-import { useState, CSSProperties } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
-
 import PostsExcerpt from "./PostsExcerpt";
 import { MoonLoader } from "react-spinners";
 
 const PostsList = () => {
-  let [loading, setLoading] = useState(true);
-  let [color, setColor] = useState("#ffffff");
 
   const {
     data: posts,
