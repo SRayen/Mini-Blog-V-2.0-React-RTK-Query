@@ -38,7 +38,7 @@ The application also provides a feature to access author profiles and view their
   #### 1.Clone the repository:
 
 ```
-git clone https://github.com/your-username/Mini-Blog-Project.git
+git clone https://github.com/SRayen/Mini-Blog-Project-V-2.0-RTK-Query.git
 ```
   #### 2.Navigate to the project directory::
 ```
@@ -49,7 +49,13 @@ cd Mini-Blog-Project
 ```
 npm install
 ```
-  #### 4.Start the development server:
+  #### 4.Start the JSON server:
+
+```
+json-server --watch data/db.json --port 3001
+```
+
+#### 5.Start the react app:
 
 ```
 npm start
