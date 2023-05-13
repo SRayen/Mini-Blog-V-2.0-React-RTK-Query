@@ -10,6 +10,7 @@ The application also provides a feature to access author profiles and view their
 ###### Relies on RTK Query hooks with identifiable cache keys.
 ###### Use multiple queries, loading states, etc. inside of one component.
 ###### Use of selectFromResult in useQuery hooks with accompanying loading, success, and error states
+###### integrated normalized cache state & optimistic update
 
 ## Tech Stack
 
