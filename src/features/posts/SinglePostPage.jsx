@@ -7,10 +7,10 @@ import { useParams, Link } from "react-router-dom";
 
 const SinglePostPage = () => {
   const { postId } = useParams();
-  const { post, isLoading } = useGetPostsQuery("getPosts", {
-    selectFromResult: ({ data, isLoading }) => ({
+  const { post,  } = useGetPostsQuery("getPosts", {
+    selectFromResult: ({ data }) => ({
       post: data?.entities[postId],
-      isLoading,
+
     }),
   });
   if (!post) {

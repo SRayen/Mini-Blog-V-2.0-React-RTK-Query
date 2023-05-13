@@ -11,17 +11,19 @@ const UserPage = () => {
 
   const {
     user,
-    isLoading: isLoadingUser,
-    isSuccess: isSuccessUser,
-    isError: isErrorUser,
-    error: errorUser,
+    // isLoading: isLoadingUser,
+    // isSuccess: isSuccessUser,
+    // isError: isErrorUser,
+    // error: errorUser,
   } = useGetUsersQuery("getUsers", {
-    selectFromResult: ({ data, isLoading, isSuccess, isError, error }) => ({
+    selectFromResult: ({ data,
+      //  isLoading, isSuccess, isError, error 
+      }) => ({
       user: data?.entities[userId],
-      isLoading,
-      isSuccess,
-      isError,
-      error,
+      // isLoading,
+      // isSuccess,
+      // isError,
+      // error,
     }),
   });
 
