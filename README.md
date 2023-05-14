@@ -23,7 +23,6 @@ The application also provides a feature to access author profiles and view their
   * Redux Toolkit
   * React advanced hooks
   * React Router 6
-  * Axios 
   * JSON Server
   * Date-fns
   * RTK Query : createApi - createEntityAdapter - selectFromResult ...
