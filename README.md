@@ -27,9 +27,11 @@ The application also provides a feature to access author profiles and view their
   * Date-fns
   * RTK Query : createApi - createEntityAdapter - selectFromResult ...
 
-## deployment : 
+## Deployment : 
   * Netifly
   * Glitch  
+  
+ ## Screenshots:
   
 ![Capture d’écran 2023-05-13 012701](https://github.com/SRayen/Mini-Blog-Project-V-2.0/assets/13922445/d0ddd936-7102-46a1-87a8-0043728dd9d1)
 
